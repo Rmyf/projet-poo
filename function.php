@@ -7,36 +7,54 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Formulaire personne</title>
     </head>
     <body>
         
-        <form action="personne.php" method="POST">
+        <form action="#" method="POST">
             <h1>Inscription</h1>
 
-            <section class="formhigh">
+            
             <label for "nom">Nom: </label>
-            <input type="text" placeholder="Nom" />
+            <input type="text" name="nom" placeholder="Nom" />
 
             <label for "prénom">Prénom: </label>
-            <input type="text" placeholder="Prénom" />
+            <input type="text" name="prenom" placeholder="Prénom" />
+            
             <label for "age">Age: </label>
-            <input type="number" min="0" max="120" />
+            <input type="number" name= "age"min="0" max="120" />
 
             <label for "region"> Région:</label>
-            <select name="nom" Region="1">
+            <select name="region" Region="1">
                 <option>Centre
-    <option>Île-de-France
-    <option>Bretagne
-    <option>Normandie
-    <option>Rhône-Aples
-    </select
+                <option>Île-de-France
+                <option>Bretagne
+                <option>Normandie
+                <option>Rhône-Aples
+            </select>
+    
+    <button name='send'>Envoyer</button>
+        </form>
+        
             
         
         <?php
         
+        if(isset($_POST['send'])){
+            $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            
+            include_once './Personne.php';
+             
+  
+            $instancePersonne = new Personne($post['nom'], $post['prenom'], $post['age'], $post['region']);
         
-        
+           echo'<pre>';
+           var_dump($instancePersonne);
+           echo '</pre>';}
+          
         ?>
+        
+        
+        
     </body>
 </html>
