@@ -7,15 +7,16 @@
  */
 
 /**
- * Description of Comments
+ * Description of RobotMenager
  *
  * @author tal
  */
-class Author {
+class RobotMenager  extends Robot{
     
-    public $nom;
-    public $avatar;
-    public $age;
-    public $level;
+    public function faireLeMenage() {
+        return "Je fais le ménage";
+        
+        
+    }
     //put your code here
 }

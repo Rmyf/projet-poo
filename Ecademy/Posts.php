@@ -29,5 +29,5 @@ class Posts {
         $this->auteur = $auteur;
     }
 
-    //put your code here
+        //put your code here
 }
